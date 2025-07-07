@@ -43,25 +43,48 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
 
 
+      // circle avatar
+      body: Center(
+        child: CircleAvatar(
+          child: Container(
+            width: 60,
+            height: 60,
+            child: Column(
+              children: [
+                Container(
+                  width: 30,
+                  height: 30,
+                  child: Image.asset('assets/images/Saiyam_Verma.jpg'),
+                ),
+                Text("Name")
+              ],
+            ),
+          ),
+          // backgroundImage: AssetImage('assets/images/Saiyam_Verma.jpg'),
+          backgroundColor: Colors.lightGreen,
+          minRadius: 60,
+          maxRadius: 60,
+        )
+      ),
 
 
 
       // list tile
-      body: ListView.separated(itemBuilder: (context, index) {
-        return ListTile(
-          leading: Text("${index + 1}"),
-          title: Text(arrNames[index]+" Hello"),
-          subtitle: Text("Number"),
-          trailing: Icon(Icons.add),
-        );
-      },
-        itemCount: arrNames.length,
-        // reverse: true,
-        separatorBuilder: (context, index){
-          return Divider(height: 40, thickness: 4,);
-        },
-        // scrollDirection: Axis.horizontal,
-      ),
+      // body: ListView.separated(itemBuilder: (context, index) {
+      //   return ListTile(
+      //     leading: Text("${index + 1}"),
+      //     title: Text(arrNames[index]+" Hello"),
+      //     subtitle: Text("Number"),
+      //     trailing: Icon(Icons.add),
+      //   );
+      // },
+      //   itemCount: arrNames.length,
+      //   // reverse: true,
+      //   separatorBuilder: (context, index){
+      //     return Divider(height: 40, thickness: 4,);
+      //   },
+      //   // scrollDirection: Axis.horizontal,
+      // ),
 
 
 
@@ -356,6 +379,9 @@ class _MyHomePageState extends State<MyHomePage> {
       // ),
 
 
+
+      // Image
+
       // body: Center(
       //   child: Container(
       //     width: 100,
@@ -364,6 +390,10 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ),
       // )
 
+
+
+
+      // Buttons
 
       // body: OutlinedButton(
       //   child: Text("Click me!"),
@@ -374,6 +404,10 @@ class _MyHomePageState extends State<MyHomePage> {
       //     print("Long pressed");
       //   },
       // ),
+
+
+
+      // container
 
       // body: Center(
       //   child: Container(
