@@ -39,30 +39,124 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
 
-      body: Center(
-        child: InkWell(
-          onTap: (){
-            print("tapped");
-          },
-          onLongPress: (){
-            print("long press");
-          },
-          onDoubleTap: (){
-            print("double tap");
-          },
-          child: Container(
-            width: 200,
-            height: 200,
-            color: Colors.amber,
-            child: Center(
-                child: InkWell(
-                    onTap: (){
-                      print("Text Tapped");
-                    },
-                    child: Text("Click", style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),))),
-          ),
-        ),
-      ),
+      
+
+
+
+
+
+      // Scrollable
+
+      // body: Padding(
+      //   padding: const EdgeInsets.all(8.0),
+      //   child: SingleChildScrollView(
+      //     child: Column(
+      //       children: [
+      //         SingleChildScrollView(
+      //           scrollDirection: Axis.horizontal,
+      //           child: Row(
+      //             children: [
+      //               Container(
+      //                 margin: EdgeInsets.only(bottom: 11),
+      //                 height: 200,
+      //                 width: 400,
+      //                 color: Colors.green,
+      //               ),
+      //               Container(
+      //                 margin: EdgeInsets.only(bottom: 11),
+      //                 height: 200,
+      //                 width: 400,
+      //                 color: Colors.pink,
+      //               ),
+      //               Container(
+      //                 margin: EdgeInsets.only(bottom: 11),
+      //                 height: 200,
+      //                 width: 400,
+      //                 color: Colors.red,
+      //               ),
+      //               Container(
+      //                 margin: EdgeInsets.only(bottom: 11),
+      //                 height: 200,
+      //                 width: 400,
+      //                 color: Colors.black,
+      //               ),
+      //               Container(
+      //                 margin: EdgeInsets.only(bottom: 11),
+      //                 height: 200,
+      //                 width: 400,
+      //                 color: Colors.green,
+      //               ),
+      //               Container(
+      //                 margin: EdgeInsets.only(bottom: 11),
+      //                 height: 200,
+      //                 width: 400,
+      //                 color: Colors.blue,
+      //               ),
+      //               Container(
+      //                 margin: EdgeInsets.only(bottom: 11),
+      //                 height: 200,
+      //                 width: 400,
+      //                 color: Colors.yellow,
+      //               ),
+      //
+      //             ],
+      //           ),
+      //         ),
+      //         Container(
+      //           margin: EdgeInsets.only(bottom: 11),
+      //           height: 200,
+      //           color: Colors.blue,
+      //         ),
+      //         Container(
+      //           margin: EdgeInsets.only(bottom: 11),
+      //           height: 200,
+      //           color: Colors.black,
+      //         ),
+      //         Container(
+      //           margin: EdgeInsets.only(bottom: 11),
+      //           height: 200,
+      //           color: Colors.grey,
+      //         ),
+      //         Container(
+      //           margin: EdgeInsets.only(bottom: 11),
+      //           height: 200,
+      //           color: Colors.red,
+      //         ),
+      //
+      //       ],
+      //     ),
+      //   ),
+      // ),
+
+
+
+
+      // Inkwell
+
+      // body: Center(
+      //   child: InkWell(
+      //     onTap: (){
+      //       print("tapped");
+      //     },
+      //     onLongPress: (){
+      //       print("long press");
+      //     },
+      //     onDoubleTap: (){
+      //       print("double tap");
+      //     },
+      //     child: Container(
+      //       width: 200,
+      //       height: 200,
+      //       color: Colors.amber,
+      //       child: Center(
+      //           child: InkWell(
+      //               onTap: (){
+      //                 print("Text Tapped");
+      //               },
+      //               child: Text("Click", style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),))),
+      //     ),
+      //   ),
+      // ),
 
 
       // body: Container(
