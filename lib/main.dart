@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/ui_helper/util.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,6 +16,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.orange),
         useMaterial3: true,
+        textTheme: TextTheme(
+          displayLarge: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),
+          titleMedium: TextStyle(fontSize: 11, fontWeight: FontWeight.w500, fontStyle: FontStyle.italic),
+        ),
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -42,14 +47,34 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
 
+      
+
+
+
+
+
+
+      // styles and themes
+      // body: Column(
+      //   children: [
+      //     Text("Hello World!!!", style: Theme.of(context).textTheme.displayLarge!.copyWith(color: Colors.orange)),
+      //     Text("Hello World!!!", style: Theme.of(context).textTheme.titleMedium),
+      //     Text("Hello World!!!", style: Theme.of(context).textTheme.displayLarge),
+      //     Text("Hello World!!!", style: mTextStyle11(textColor: Colors.pink),),
+      //   ],
+      // ),
+
+
+
+
 
       // custom font
-      body: Center(
-        child: Text(
-          "Hello",
-          style: TextStyle(fontFamily: 'FontMain', fontWeight: FontWeight.w500, fontSize: 55),
-        ),
-      ),
+      // body: Center(
+      //   child: Text(
+      //     "Hello",
+      //     style: TextStyle(fontFamily: 'FontMain', fontWeight: FontWeight.w500, fontSize: 55),
+      //   ),
+      // ),
 
 
 
