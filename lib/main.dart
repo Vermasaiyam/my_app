@@ -47,9 +47,18 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
 
+      // card widget
+      body: Center(
+        child: Card(
+          elevation: 8,
+          shadowColor: Colors.blue,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text("Hello World", style: TextStyle(fontSize: 25),),
+          )
+        ),
+      ),
       
-
-
 
 
 
