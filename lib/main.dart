@@ -42,40 +42,57 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
 
-      // expanded widget
-      body: Column(
-        // mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Expanded(
-            flex: 2,
-            child: Container(
-              height: 100,
-              color: Colors.blue,
-            ),
-          ),
-          Expanded(
-            flex: 4,
-            child: Container(
-              height: 100,
-              color: Colors.orange,
-            ),
-          ),
-          Expanded(
-            flex: 3,
-            child: Container(
-              height: 100,
-              color: Colors.red,
-            ),
-          ),
-          Expanded(
-            child: Container(
-              height: 100,
-              color: Colors.grey,
-            ),
-          ),
+      // padding and margin
 
-        ],
+      // body: Padding(
+      //   padding: const EdgeInsets.only(top:8.0, left: 5),
+      //   child: Text("Hello", style: TextStyle(fontSize: 25),),
+      // ),
+      body: Container(
+        margin: EdgeInsets.all(12),
+        color: Colors.blue,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text("Hello", style: TextStyle(fontSize: 25),),
+        )
       ),
+
+
+
+      // expanded widget
+      // body: Column(
+      //   // mainAxisAlignment: MainAxisAlignment.center,
+      //   children: [
+      //     Expanded(
+      //       flex: 2,
+      //       child: Container(
+      //         height: 100,
+      //         color: Colors.blue,
+      //       ),
+      //     ),
+      //     Expanded(
+      //       flex: 4,
+      //       child: Container(
+      //         height: 100,
+      //         color: Colors.orange,
+      //       ),
+      //     ),
+      //     Expanded(
+      //       flex: 3,
+      //       child: Container(
+      //         height: 100,
+      //         color: Colors.red,
+      //       ),
+      //     ),
+      //     Expanded(
+      //       child: Container(
+      //         height: 100,
+      //         color: Colors.grey,
+      //       ),
+      //     ),
+      //
+      //   ],
+      // ),
 
 
 
