@@ -42,33 +42,68 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
 
+      // adding decoration to container
+
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        color: Colors.blue,
+        child: Center(
+          child: Container(
+            width: 200,
+            height: 200,
+            decoration: BoxDecoration(
+              color: Colors.blueGrey,
+              // borderRadius: BorderRadius.only(topLeft: Radius.circular(21), bottomRight: Radius.circular(21)),
+              border: Border.all(
+                width: 7,
+                color: Colors.black,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  blurRadius: 21,
+                  spreadRadius: 11,
+                  color: Colors.grey,
+                ),
+              ],
+              shape: BoxShape.circle
+            ),
+          ),
+        ),
+      ),
+
+
+
+
+
+
       // Listview
       
-      body: ListView.separated(itemBuilder: (context, index) {
-        return Row(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(arrNames[index], style: TextStyle(fontSize: 21),),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(arrNames[index], style: TextStyle(fontSize: 21),),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(arrNames[index], style: TextStyle(fontSize: 21),),
-            ),
-          ],
-        );
-      },
-        itemCount: arrNames.length,
-        // reverse: true,
-        separatorBuilder: (context, index){
-          return Divider(height: 40, thickness: 4,);
-        },
-        // scrollDirection: Axis.horizontal,
-      ),
+      // body: ListView.separated(itemBuilder: (context, index) {
+      //   return Row(
+      //     children: [
+      //       Padding(
+      //         padding: const EdgeInsets.all(8.0),
+      //         child: Text(arrNames[index], style: TextStyle(fontSize: 21),),
+      //       ),
+      //       Padding(
+      //         padding: const EdgeInsets.all(8.0),
+      //         child: Text(arrNames[index], style: TextStyle(fontSize: 21),),
+      //       ),
+      //       Padding(
+      //         padding: const EdgeInsets.all(8.0),
+      //         child: Text(arrNames[index], style: TextStyle(fontSize: 21),),
+      //       ),
+      //     ],
+      //   );
+      // },
+      //   itemCount: arrNames.length,
+      //   // reverse: true,
+      //   separatorBuilder: (context, index){
+      //     return Divider(height: 40, thickness: 4,);
+      //   },
+      //   // scrollDirection: Axis.horizontal,
+      // ),
       
       // body: ListView(
       //   scrollDirection: Axis.horizontal,
