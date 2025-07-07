@@ -39,7 +39,24 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
 
-      body: ,
+      body: Center(
+        child: InkWell(
+          onTap: (){
+            print("tapped");
+          },
+          onLongPress: (){
+            print("long press");
+          },
+          onDoubleTap: (){
+            print("double tap");
+          },
+          child: Container(
+            width: 200,
+            height: 200,
+            color: Colors.amber,
+          ),
+        ),
+      ),
 
 
       // body: Container(
