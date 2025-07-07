@@ -35,6 +35,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  var emailText = TextEditingController();
+  var passText = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -47,18 +49,95 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
 
-      // card widget
+      // textField
       body: Center(
-        child: Card(
-          elevation: 8,
-          shadowColor: Colors.blue,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text("Hello World", style: TextStyle(fontSize: 25),),
+        child: Container(
+          width: 300,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextField(
+                keyboardType: TextInputType.phone,
+                controller: emailText,
+                // enabled: false,
+                decoration: InputDecoration(
+                  hintText: 'Enter your number',
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(11),
+                    borderSide: BorderSide(
+                      color: Colors.deepOrange,
+                      width: 2,
+                    )
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(11),
+                    borderSide: BorderSide(
+                      color: Colors.blueAccent,
+                      width: 2,
+                    )
+                  ),
+                  disabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(11),
+                    borderSide: BorderSide(
+                      color: Colors.grey,
+                      width: 2,
+                    )
+                  ),
+                  // suffixText: "Username exists",
+                  suffixIcon: IconButton(
+                    onPressed: (){
+
+                    },
+                    icon: Icon(Icons.remove_red_eye, color: Colors.orange,),
+                  ),
+                  prefixIcon: Icon(Icons.phone, color: Colors.orange,),
+                ),
+              ),
+              Container(height: 11,),
+              TextField(
+                controller: passText,
+                obscureText: true,
+                obscuringCharacter: '*',
+                decoration: InputDecoration(
+                  hintText: 'Enter your Password',
+                  border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(11),
+                  borderSide: BorderSide(
+                    color: Colors.deepOrange,
+                  )
+                  )
+                ),
+              ),
+              ElevatedButton(
+                onPressed: (){
+                  String uEmail = emailText.text.toString();
+                  String uPass = passText.text.toString();
+
+                  print("Email: $uEmail, Password: $uPass");
+                },
+                child: Text("Login"),
+              )
+            ],
           )
-        ),
+        )
       ),
-      
+
+
+
+
+
+      // card widget
+      // body: Center(
+      //   child: Card(
+      //     elevation: 8,
+      //     shadowColor: Colors.blue,
+      //     child: Padding(
+      //       padding: const EdgeInsets.all(8.0),
+      //       child: Text("Hello World", style: TextStyle(fontSize: 25),),
+      //     )
+      //   ),
+      // ),
+
 
 
 
