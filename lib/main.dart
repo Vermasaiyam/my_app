@@ -43,29 +43,43 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
 
 
-      // circle avatar
+      // custom font
       body: Center(
-        child: CircleAvatar(
-          child: Container(
-            width: 60,
-            height: 60,
-            child: Column(
-              children: [
-                Container(
-                  width: 30,
-                  height: 30,
-                  child: Image.asset('assets/images/Saiyam_Verma.jpg'),
-                ),
-                Text("Name")
-              ],
-            ),
-          ),
-          // backgroundImage: AssetImage('assets/images/Saiyam_Verma.jpg'),
-          backgroundColor: Colors.lightGreen,
-          minRadius: 60,
-          maxRadius: 60,
-        )
+        child: Text(
+          "Hello",
+          style: TextStyle(fontFamily: 'FontMain', fontWeight: FontWeight.w500, fontSize: 55),
+        ),
       ),
+
+
+
+
+
+      // circle avatar
+      // body: Center(
+      //   child: CircleAvatar(
+      //     child: Container(
+      //       width: 60,
+      //       height: 60,
+      //       child: Column(
+      //         children: [
+      //           Container(
+      //             width: 30,
+      //             height: 30,
+      //             child: Image.asset('assets/images/Saiyam_Verma.jpg'),
+      //           ),
+      //           Text("Name")
+      //         ],
+      //       ),
+      //     ),
+      //     // backgroundImage: AssetImage('assets/images/Saiyam_Verma.jpg'),
+      //     backgroundColor: Colors.lightGreen,
+      //     minRadius: 60,
+      //     maxRadius: 60,
+      //   )
+      // ),
+
+
 
 
 
