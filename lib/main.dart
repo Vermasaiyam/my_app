@@ -42,85 +42,113 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
 
     var arrNames = ['1', '2', '3', '4', '5'];
-
+    var time = DateTime.now();
+    
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
 
-      // textField
+      // current date and time
+
       body: Center(
         child: Container(
-          width: 300,
+          width: 400,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TextField(
-                keyboardType: TextInputType.phone,
-                controller: emailText,
-                // enabled: false,
-                decoration: InputDecoration(
-                  hintText: 'Enter your number',
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(11),
-                    borderSide: BorderSide(
-                      color: Colors.deepOrange,
-                      width: 2,
-                    )
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(11),
-                    borderSide: BorderSide(
-                      color: Colors.blueAccent,
-                      width: 2,
-                    )
-                  ),
-                  disabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(11),
-                    borderSide: BorderSide(
-                      color: Colors.grey,
-                      width: 2,
-                    )
-                  ),
-                  // suffixText: "Username exists",
-                  suffixIcon: IconButton(
-                    onPressed: (){
-
-                    },
-                    icon: Icon(Icons.remove_red_eye, color: Colors.orange,),
-                  ),
-                  prefixIcon: Icon(Icons.phone, color: Colors.orange,),
-                ),
-              ),
-              Container(height: 11,),
-              TextField(
-                controller: passText,
-                obscureText: true,
-                obscuringCharacter: '*',
-                decoration: InputDecoration(
-                  hintText: 'Enter your Password',
-                  border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(11),
-                  borderSide: BorderSide(
-                    color: Colors.deepOrange,
-                  )
-                  )
-                ),
-              ),
+              Text("Current Time: ${time.hour} : ${time.minute} : ${time.second}", style: TextStyle(fontSize: 25),),
               ElevatedButton(
                 onPressed: (){
-                  String uEmail = emailText.text.toString();
-                  String uPass = passText.text.toString();
+                  setState(() {
 
-                  print("Email: $uEmail, Password: $uPass");
+                  });
                 },
-                child: Text("Login"),
+                child: Text("Current Time"),
               )
             ],
-          )
-        )
+          ),
+        ),
       ),
+
+
+
+
+
+      // textField
+
+      // body: Center(
+      //   child: Container(
+      //     width: 300,
+      //     child: Column(
+      //       mainAxisAlignment: MainAxisAlignment.center,
+      //       children: [
+      //         TextField(
+      //           keyboardType: TextInputType.phone,
+      //           controller: emailText,
+      //           // enabled: false,
+      //           decoration: InputDecoration(
+      //             hintText: 'Enter your number',
+      //             focusedBorder: OutlineInputBorder(
+      //               borderRadius: BorderRadius.circular(11),
+      //               borderSide: BorderSide(
+      //                 color: Colors.deepOrange,
+      //                 width: 2,
+      //               )
+      //             ),
+      //             enabledBorder: OutlineInputBorder(
+      //               borderRadius: BorderRadius.circular(11),
+      //               borderSide: BorderSide(
+      //                 color: Colors.blueAccent,
+      //                 width: 2,
+      //               )
+      //             ),
+      //             disabledBorder: OutlineInputBorder(
+      //               borderRadius: BorderRadius.circular(11),
+      //               borderSide: BorderSide(
+      //                 color: Colors.grey,
+      //                 width: 2,
+      //               )
+      //             ),
+      //             // suffixText: "Username exists",
+      //             suffixIcon: IconButton(
+      //               onPressed: (){
+      //
+      //               },
+      //               icon: Icon(Icons.remove_red_eye, color: Colors.orange,),
+      //             ),
+      //             prefixIcon: Icon(Icons.phone, color: Colors.orange,),
+      //           ),
+      //         ),
+      //         Container(height: 11,),
+      //         TextField(
+      //           controller: passText,
+      //           obscureText: true,
+      //           obscuringCharacter: '*',
+      //           decoration: InputDecoration(
+      //             hintText: 'Enter your Password',
+      //             border: OutlineInputBorder(
+      //             borderRadius: BorderRadius.circular(11),
+      //             borderSide: BorderSide(
+      //               color: Colors.deepOrange,
+      //             )
+      //             )
+      //           ),
+      //         ),
+      //         ElevatedButton(
+      //           onPressed: (){
+      //             String uEmail = emailText.text.toString();
+      //             String uPass = passText.text.toString();
+      //
+      //             print("Email: $uEmail, Password: $uPass");
+      //           },
+      //           child: Text("Login"),
+      //         )
+      //       ],
+      //     )
+      //   )
+      // ),
 
 
 
