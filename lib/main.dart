@@ -42,35 +42,73 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
 
-      // adding decoration to container
-
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        color: Colors.blue,
-        child: Center(
-          child: Container(
-            width: 200,
-            height: 200,
-            decoration: BoxDecoration(
-              color: Colors.blueGrey,
-              // borderRadius: BorderRadius.only(topLeft: Radius.circular(21), bottomRight: Radius.circular(21)),
-              border: Border.all(
-                width: 7,
-                color: Colors.black,
-              ),
-              boxShadow: [
-                BoxShadow(
-                  blurRadius: 21,
-                  spreadRadius: 11,
-                  color: Colors.grey,
-                ),
-              ],
-              shape: BoxShape.circle
+      // expanded widget
+      body: Column(
+        // mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Expanded(
+            flex: 2,
+            child: Container(
+              height: 100,
+              color: Colors.blue,
             ),
           ),
-        ),
+          Expanded(
+            flex: 4,
+            child: Container(
+              height: 100,
+              color: Colors.orange,
+            ),
+          ),
+          Expanded(
+            flex: 3,
+            child: Container(
+              height: 100,
+              color: Colors.red,
+            ),
+          ),
+          Expanded(
+            child: Container(
+              height: 100,
+              color: Colors.grey,
+            ),
+          ),
+
+        ],
       ),
+
+
+
+
+      // adding decoration to container
+
+      // body: Container(
+      //   width: double.infinity,
+      //   height: double.infinity,
+      //   color: Colors.blue,
+      //   child: Center(
+      //     child: Container(
+      //       width: 200,
+      //       height: 200,
+      //       decoration: BoxDecoration(
+      //         color: Colors.blueGrey,
+      //         // borderRadius: BorderRadius.only(topLeft: Radius.circular(21), bottomRight: Radius.circular(21)),
+      //         border: Border.all(
+      //           width: 7,
+      //           color: Colors.black,
+      //         ),
+      //         boxShadow: [
+      //           BoxShadow(
+      //             blurRadius: 21,
+      //             spreadRadius: 11,
+      //             color: Colors.grey,
+      //           ),
+      //         ],
+      //         shape: BoxShape.circle
+      //       ),
+      //     ),
+      //   ),
+      // ),
 
 
 
