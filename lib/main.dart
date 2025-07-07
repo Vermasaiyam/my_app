@@ -42,20 +42,44 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
 
+
+
+
+
+      // list tile
+      body: ListView.separated(itemBuilder: (context, index) {
+        return ListTile(
+          leading: Text("${index + 1}"),
+          title: Text(arrNames[index]+" Hello"),
+          subtitle: Text("Number"),
+          trailing: Icon(Icons.add),
+        );
+      },
+        itemCount: arrNames.length,
+        // reverse: true,
+        separatorBuilder: (context, index){
+          return Divider(height: 40, thickness: 4,);
+        },
+        // scrollDirection: Axis.horizontal,
+      ),
+
+
+
+
       // padding and margin
 
       // body: Padding(
       //   padding: const EdgeInsets.only(top:8.0, left: 5),
       //   child: Text("Hello", style: TextStyle(fontSize: 25),),
       // ),
-      body: Container(
-        margin: EdgeInsets.all(12),
-        color: Colors.blue,
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Text("Hello", style: TextStyle(fontSize: 25),),
-        )
-      ),
+      // body: Container(
+      //   margin: EdgeInsets.all(12),
+      //   color: Colors.blue,
+      //   child: Padding(
+      //     padding: const EdgeInsets.all(8.0),
+      //     child: Text("Hello", style: TextStyle(fontSize: 25),),
+      //   )
+      // ),
 
 
 
@@ -126,8 +150,6 @@ class _MyHomePageState extends State<MyHomePage> {
       //     ),
       //   ),
       // ),
-
-
 
 
 
