@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/ui_helper/util.dart';
+import 'package:intl/intl.dart';
 
 void main() {
   runApp(const MyApp());
@@ -50,15 +51,14 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
 
-      // current date and time
-
+      // dateformat patterns
       body: Center(
         child: Container(
           width: 400,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Current Time: ${time.hour} : ${time.minute} : ${time.second}", style: TextStyle(fontSize: 25),),
+              Text("Current Time: ${DateFormat('yMMMMd').format(time)}", style: TextStyle(fontSize: 25),),
               ElevatedButton(
                 onPressed: (){
                   setState(() {
@@ -71,6 +71,32 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
+
+
+
+
+
+      // current date and time
+
+      // body: Center(
+      //   child: Container(
+      //     width: 400,
+      //     child: Column(
+      //       mainAxisAlignment: MainAxisAlignment.center,
+      //       children: [
+      //         Text("Current Time: ${time.hour} : ${time.minute} : ${time.second}", style: TextStyle(fontSize: 25),),
+      //         ElevatedButton(
+      //           onPressed: (){
+      //             setState(() {
+      //
+      //             });
+      //           },
+      //           child: Text("Current Time"),
+      //         )
+      //       ],
+      //     ),
+      //   ),
+      // ),
 
 
 
