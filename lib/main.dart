@@ -33,13 +33,69 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+
+    var arrNames = ['1', '2', '3', '4', '5'];
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
 
+      // Listview
       
+      body: ListView.separated(itemBuilder: (context, index) {
+        return Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(arrNames[index], style: TextStyle(fontSize: 21),),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(arrNames[index], style: TextStyle(fontSize: 21),),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(arrNames[index], style: TextStyle(fontSize: 21),),
+            ),
+          ],
+        );
+      },
+        itemCount: arrNames.length,
+        // reverse: true,
+        separatorBuilder: (context, index){
+          return Divider(height: 40, thickness: 4,);
+        },
+        // scrollDirection: Axis.horizontal,
+      ),
+      
+      // body: ListView(
+      //   scrollDirection: Axis.horizontal,
+      //   reverse: true,
+      //   children: [
+      //     Padding(
+      //       padding: const EdgeInsets.all(8.0),
+      //       child: Text("One", style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),),
+      //     ),
+      //     Padding(
+      //       padding: const EdgeInsets.all(8.0),
+      //       child: Text("Two", style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),),
+      //     ),
+      //     Padding(
+      //       padding: const EdgeInsets.all(8.0),
+      //       child: Text("3", style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),),
+      //     ),
+      //     Padding(
+      //       padding: const EdgeInsets.all(8.0),
+      //       child: Text("4", style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),),
+      //     ),
+      //     Padding(
+      //       padding: const EdgeInsets.all(8.0),
+      //       child: Text("5", style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),),
+      //     ),
+      //   ],
+      // ),
 
 
 
