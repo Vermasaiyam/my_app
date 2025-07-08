@@ -39,6 +39,10 @@ class _MyHomePageState extends State<MyHomePage> {
   var emailText = TextEditingController();
   var passText = TextEditingController();
 
+  callback(){
+    print("Clicked!!!");
+  }
+
   @override
   Widget build(BuildContext context) {
 
@@ -57,6 +61,21 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
+
+
+
+      
+
+
+
+      // callback function
+      // body: ElevatedButton(
+      //   onPressed: callback,
+      //   child: Text("Click"),
+      // ),
+
+
+
 
 
       // gridView in flutter
@@ -100,12 +119,12 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ],
       // ),
 
-      body: GridView.builder(itemBuilder: (context, index) {
-        return Container(color: arrColors[index],);
-      },
-        itemCount: arrColors.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
-      ),
+      // body: GridView.builder(itemBuilder: (context, index) {
+      //   return Container(color: arrColors[index],);
+      // },
+      //   itemCount: arrColors.length,
+      //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+      // ),
       
       
       
