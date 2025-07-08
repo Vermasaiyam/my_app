@@ -35,6 +35,48 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
+class CatItems extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+        flex: 2,
+        child: Container(
+          color: Colors.blue,
+          child: ListView.builder(itemBuilder: (context, index) => Padding(
+            padding: const EdgeInsets.all(11),
+            child: CircleAvatar(
+              backgroundColor: Colors.green,
+            ),
+          ), itemCount: 30, scrollDirection: Axis.horizontal,
+          ),
+        )
+    );
+  }
+}
+
+class ContextItems extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      flex: 4,
+      child: Container(
+        color: Colors.green,
+        child: ListView.builder(itemBuilder: (context, index) => Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: ListTile(
+            leading: CircleAvatar(
+              backgroundColor: Colors.orange,
+            ),
+            title: Text("Name"),
+            subtitle: Text("Mob No"),
+            trailing: Icon(Icons.delete),
+          ),
+        ),),
+      ),
+    );
+  }
+}
+
 class _MyHomePageState extends State<MyHomePage> {
   var emailText = TextEditingController();
   var passText = TextEditingController();
@@ -62,9 +104,59 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
 
+      // custom widget
+
+      body: Container(
+        child: Column(
+          children: [
+            CatItems(),
+            ContextItems(),
+            Expanded(
+              flex: 1,
+              child: Container(
+                color: Colors.orange,
+                padding: EdgeInsets.all(16), // margin inside orange container
+                child: Row(
+                  children: [
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(color: Colors.deepOrange, width: 2),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        height: 100,
+                      ),
+                    ),
+                    SizedBox(width: 16), // gap between the two blocks
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(color: Colors.deepOrange, width: 2),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        height: 100,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Expanded(
+              flex: 3,
+              child: Container(
+                color: Colors.grey,
+              ),
+            ),
+          ],
+        ),
+      ),
 
 
-      
+
 
 
 
