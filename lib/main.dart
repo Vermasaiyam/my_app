@@ -43,6 +43,13 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
 
     var arrNames = ['1', '2', '3', '4', '5'];
+    var arrColors = [
+      Colors.black,
+      Colors.pink,
+      Colors.grey,
+      Colors.blue,
+      Colors.green,
+    ];
     var time = DateTime.now();
     
     return Scaffold(
@@ -51,26 +58,126 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
 
-      // dateformat patterns
-      body: Center(
-        child: Container(
-          width: 400,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("Current Time: ${DateFormat('yMMMMd').format(time)}", style: TextStyle(fontSize: 25),),
-              ElevatedButton(
-                onPressed: (){
-                  setState(() {
 
-                  });
-                },
-                child: Text("Current Time"),
-              )
-            ],
-          ),
-        ),
+      // gridView in flutter
+      // body: Column(
+      //   children: [
+      //     Container(
+      //       height: 200,
+      //       child: GridView.count(
+      //         crossAxisCount: 5,
+      //         crossAxisSpacing: 11,
+      //         mainAxisSpacing: 11,
+      //         children: [
+      //           Container(color: Colors.amber,),
+      //           Container(color: Colors.pink,),
+      //           Container(color: Colors.red,),
+      //           Container(color: Colors.blue,),
+      //           Container(color: Colors.grey,),
+      //           Container(color: Colors.amber,),
+      //           Container(color: Colors.pinkAccent,),
+      //         ],
+      //       ),
+      //     ),
+      //     Container(height: 100,),
+      //     Container(
+      //       height: 400,
+      //       child: GridView.extent(
+      //         maxCrossAxisExtent: 200,
+      //         crossAxisSpacing: 11,
+      //         mainAxisSpacing: 11,
+      //         children: [
+      //           Container(color: Colors.amber,),
+      //           Container(color: Colors.pink,),
+      //           Container(color: Colors.red,),
+      //           Container(color: Colors.blue,),
+      //           Container(color: Colors.grey,),
+      //           Container(color: Colors.amber,),
+      //           Container(color: Colors.pinkAccent,),
+      //         ],
+      //       ),
+      //     ),
+      //   ],
+      // ),
+
+      body: GridView.builder(itemBuilder: (context, index) {
+        return Container(color: arrColors[index],);
+      },
+        itemCount: arrColors.length,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
       ),
+      
+      
+      
+      
+
+
+
+
+      // date time picker
+
+      // body: Center(
+      //   child: Column(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //       Text(
+      //         "Select Date",
+      //         style: TextStyle(fontSize: 25),
+      //       ),
+      //       ElevatedButton(onPressed: () async {
+      //         DateTime? datePicked = await showDatePicker(
+      //           context: context,
+      //           initialDate: DateTime.now(),
+      //           firstDate: DateTime(2020),
+      //           lastDate: DateTime(2025),
+      //         );
+      //
+      //         if (datePicked != null) {
+      //           print("${datePicked}");
+      //         }
+      //       }, child: Text("Show")),
+      //       ElevatedButton(onPressed: () async {
+      //         TimeOfDay? timePicked = await showTimePicker(
+      //           context: context,
+      //           initialTime: TimeOfDay.now(),
+      //           initialEntryMode: TimePickerEntryMode.dial,
+      //         );
+      //
+      //         if (timePicked != null) {
+      //           print("${timePicked}");
+      //         }
+      //       }, child: Text("Select Time")),
+      //     ],
+      //   ),
+      // ),
+
+
+
+
+
+
+
+      // dateformat patterns
+
+      // body: Center(
+      //   child: Container(
+      //     width: 400,
+      //     child: Column(
+      //       mainAxisAlignment: MainAxisAlignment.center,
+      //       children: [
+      //         Text("Current Time: ${DateFormat('yMMMMd').format(time)}", style: TextStyle(fontSize: 25),),
+      //         ElevatedButton(
+      //           onPressed: (){
+      //             setState(() {
+      //
+      //             });
+      //           },
+      //           child: Text("Current Time"),
+      //         )
+      //       ],
+      //     ),
+      //   ),
+      // ),
 
 
 
