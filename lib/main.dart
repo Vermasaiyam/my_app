@@ -125,12 +125,24 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
 
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){
-          // Provider.of<CounterProvider>(context, listen: false).incrementCount();
-          context.read<CounterProvider>().incrementCount();
-        },
-        child: Icon(Icons.add),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          FloatingActionButton(
+            onPressed: (){
+              // Provider.of<CounterProvider>(context, listen: false).incrementCount();
+              context.read<CounterProvider>().incrementCount();
+            },
+            child: Icon(Icons.add),
+          ),
+          FloatingActionButton(
+            onPressed: (){
+              // Provider.of<CounterProvider>(context, listen: false).incrementCount();
+              context.read<CounterProvider>().decrementCount();
+            },
+            child: Icon(Icons.remove),
+          ),
+        ],
       ),
 
 
