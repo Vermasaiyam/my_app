@@ -106,39 +106,47 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
 
 
-      // custom widget
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              width: 100,
-              child: RoundedButton(
-                btnName: 'Login',
-                icon: Icon(Icons.lock),
-                callback: (){
-                  print("Logged in!!!");
-                },
-                textStyle: mTextStyle11(),
-              ),
-            ),
-            Container(height: 11,),
-            Container(
-              width: 100,
-              child: RoundedButton(
-                btnName: 'Press',
-                icon: Icon(Icons.lock),
-                callback: (){
-                  print("Logged in!!!");
-                },
-                bgColor: Colors.orange,
-                textStyle: mTextStyle11(),
-              ),
-            ),
-          ],
-        ),
-      ),
 
+
+
+
+
+
+
+
+      // custom widget
+
+      // body: Center(
+      //   child: Column(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //       Container(
+      //         width: 100,
+      //         child: RoundedButton(
+      //           btnName: 'Login',
+      //           icon: Icon(Icons.lock),
+      //           callback: (){
+      //             print("Logged in!!!");
+      //           },
+      //           textStyle: mTextStyle11(),
+      //         ),
+      //       ),
+      //       Container(height: 11,),
+      //       Container(
+      //         width: 100,
+      //         child: RoundedButton(
+      //           btnName: 'Press',
+      //           icon: Icon(Icons.lock),
+      //           callback: (){
+      //             print("Logged in!!!");
+      //           },
+      //           bgColor: Colors.orange,
+      //           textStyle: mTextStyle11(),
+      //         ),
+      //       ),
+      //     ],
+      //   ),
+      // ),
 
 
 
