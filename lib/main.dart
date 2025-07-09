@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/counter_provider.dart';
 import 'package:my_app/ui_helper/util.dart';
 import 'package:intl/intl.dart';
 import 'package:my_app/widgets/rounded_button.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,7 +25,10 @@ class MyApp extends StatelessWidget {
           titleMedium: TextStyle(fontSize: 11, fontWeight: FontWeight.w500, fontStyle: FontStyle.italic),
         ),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: ChangeNotifierProvider(
+        create: (_) => CounterProvider(),
+        child: const MyHomePage(title: 'Flutter Demo Home Page')
+      ),
     );
   }
 }
@@ -82,12 +87,14 @@ class _MyHomePageState extends State<MyHomePage> {
   var emailText = TextEditingController();
   var passText = TextEditingController();
 
+
   callback(){
     print("Clicked!!!");
   }
 
   @override
   Widget build(BuildContext context) {
+    print("Build Page!!!");
 
     var arrNames = ['1', '2', '3', '4', '5'];
     var arrColors = [
@@ -105,40 +112,68 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
 
-
-      // custom widget
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              width: 100,
-              child: RoundedButton(
-                btnName: 'Login',
-                icon: Icon(Icons.lock),
-                callback: (){
-                  print("Logged in!!!");
-                },
-                textStyle: mTextStyle11(),
-              ),
-            ),
-            Container(height: 11,),
-            Container(
-              width: 100,
-              child: RoundedButton(
-                btnName: 'Press',
-                icon: Icon(Icons.lock),
-                callback: (){
-                  print("Logged in!!!");
-                },
-                bgColor: Colors.orange,
-                textStyle: mTextStyle11(),
-              ),
-            ),
-          ],
+        child: Consumer(
+          builder: (ctx, _, __){
+            print("Consumer build!!!");
+            return Text(
+              // '${Provider.of<CounterProvider>(ctx, listen: true).getCount()}',
+              '${ctx.watch<CounterProvider>().getCount()}',
+              style: TextStyle(fontSize: 25),
+            );
+          },
         ),
       ),
 
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          // Provider.of<CounterProvider>(context, listen: false).incrementCount();
+          context.read<CounterProvider>().incrementCount();
+        },
+        child: Icon(Icons.add),
+      ),
+
+
+
+
+
+
+
+
+
+      // custom widget
+
+      // body: Center(
+      //   child: Column(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //       Container(
+      //         width: 100,
+      //         child: RoundedButton(
+      //           btnName: 'Login',
+      //           icon: Icon(Icons.lock),
+      //           callback: (){
+      //             print("Logged in!!!");
+      //           },
+      //           textStyle: mTextStyle11(),
+      //         ),
+      //       ),
+      //       Container(height: 11,),
+      //       Container(
+      //         width: 100,
+      //         child: RoundedButton(
+      //           btnName: 'Press',
+      //           icon: Icon(Icons.lock),
+      //           callback: (){
+      //             print("Logged in!!!");
+      //           },
+      //           bgColor: Colors.orange,
+      //           textStyle: mTextStyle11(),
+      //         ),
+      //       ),
+      //     ],
+      //   ),
+      // ),
 
 
 
