@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/counter_provider.dart';
+import 'package:my_app/list_map_provider.dart';
+import 'package:my_app/list_page.dart';
 import 'package:my_app/ui_helper/util.dart';
 import 'package:intl/intl.dart';
 import 'package:my_app/widgets/rounded_button.dart';
@@ -25,10 +27,23 @@ class MyApp extends StatelessWidget {
           titleMedium: TextStyle(fontSize: 11, fontWeight: FontWeight.w500, fontStyle: FontStyle.italic),
         ),
       ),
-      home: ChangeNotifierProvider(
-        create: (_) => CounterProvider(),
-        child: const MyHomePage(title: 'Flutter Demo Home Page')
-      ),
+
+      // counter
+
+      // home: ChangeNotifierProvider(
+      //   create: (_) => CounterProvider(),
+      //   child: const MyHomePage(title: 'Flutter Demo Home Page')
+      // ),
+
+      // list map
+
+      home: MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (context) => ListMapProvider()),
+          ChangeNotifierProvider(create: (context) => CounterProvider()),
+        ],
+        child: ListPage(),
+      )
     );
   }
 }
