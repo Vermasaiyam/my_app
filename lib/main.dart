@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/ui_helper/util.dart';
 import 'package:intl/intl.dart';
+import 'package:my_app/widgets/rounded_button.dart';
 
 void main() {
   runApp(const MyApp());
@@ -104,57 +105,96 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
 
-      // custom widget
 
-      body: Container(
+      // custom widget
+      body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CatItems(),
-            ContextItems(),
-            Expanded(
-              flex: 1,
-              child: Container(
-                color: Colors.orange,
-                padding: EdgeInsets.all(16), // margin inside orange container
-                child: Row(
-                  children: [
-                    Expanded(
-                      flex: 1,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(color: Colors.deepOrange, width: 2),
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        height: 100,
-                      ),
-                    ),
-                    SizedBox(width: 16), // gap between the two blocks
-                    Expanded(
-                      flex: 1,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(color: Colors.deepOrange, width: 2),
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        height: 100,
-                      ),
-                    ),
-                  ],
-                ),
+            Container(
+              width: 100,
+              child: RoundedButton(
+                btnName: 'Login',
+                icon: Icon(Icons.lock),
+                callback: (){
+                  print("Logged in!!!");
+                },
+                textStyle: mTextStyle11(),
               ),
             ),
-            Expanded(
-              flex: 3,
-              child: Container(
-                color: Colors.grey,
+            Container(height: 11,),
+            Container(
+              width: 100,
+              child: RoundedButton(
+                btnName: 'Press',
+                icon: Icon(Icons.lock),
+                callback: (){
+                  print("Logged in!!!");
+                },
+                bgColor: Colors.orange,
+                textStyle: mTextStyle11(),
               ),
             ),
           ],
         ),
       ),
 
+
+
+
+
+
+
+      // splitting into widget
+
+      // body: Container(
+      //   child: Column(
+      //     children: [
+      //       CatItems(),
+      //       ContextItems(),
+      //       Expanded(
+      //         flex: 1,
+      //         child: Container(
+      //           color: Colors.orange,
+      //           padding: EdgeInsets.all(16), // margin inside orange container
+      //           child: Row(
+      //             children: [
+      //               Expanded(
+      //                 flex: 1,
+      //                 child: Container(
+      //                   decoration: BoxDecoration(
+      //                     color: Colors.white,
+      //                     border: Border.all(color: Colors.deepOrange, width: 2),
+      //                     borderRadius: BorderRadius.circular(12),
+      //                   ),
+      //                   height: 100,
+      //                 ),
+      //               ),
+      //               SizedBox(width: 16), // gap between the two blocks
+      //               Expanded(
+      //                 flex: 1,
+      //                 child: Container(
+      //                   decoration: BoxDecoration(
+      //                     color: Colors.white,
+      //                     border: Border.all(color: Colors.deepOrange, width: 2),
+      //                     borderRadius: BorderRadius.circular(12),
+      //                   ),
+      //                   height: 100,
+      //                 ),
+      //               ),
+      //             ],
+      //           ),
+      //         ),
+      //       ),
+      //       Expanded(
+      //         flex: 3,
+      //         child: Container(
+      //           color: Colors.grey,
+      //         ),
+      //       ),
+      //     ],
+      //   ),
+      // ),
 
 
 
