@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_app/add_data_page.dart';
 import 'package:my_app/list_map_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -16,20 +17,31 @@ class ListPage extends StatelessWidget{
           return data.isNotEmpty ? ListView.builder(
             itemCount: data.length,
             itemBuilder: (ctx, idx){
-            return ListTile(
-              title: Text('${data[idx]['name']}'),
-              subtitle: Text('${data[idx]['Contact Number']}'),
-            );
+              return ListTile(
+                title: Text('${data[idx]['name']}'),
+                subtitle: Text('${data[idx]['Contact Number']}'),
+                trailing: SizedBox(
+                  width: 100,
+                  child: Row(
+                    children: [
+                      IconButton(onPressed: (){
+                        context.read<ListMapProvider>().updateData({
+                          "name": "sdfyguikl",
+                          "Contact Number": "999999999",
+                        }, idx);
+                      }, icon: Icon(Icons.edit)),
+                      IconButton(onPressed: (){context.read<ListMapProvider>().deleteData(idx);}, icon: Icon(Icons.delete)),
+                    ],
+                  ),
+                ),
+              );
           }) : Center(child: Text("No contacts yet"));
         }
       ),
 
       floatingActionButton: FloatingActionButton(
         onPressed: (){
-          context.read<ListMapProvider>().addData({
-            "name": "Name",
-            "Contact Number": "4567890987",
-          });
+          Navigator.push(context, MaterialPageRoute(builder: (context) => AddDataPage(),));
         },
         child: Icon(Icons.add),
       ),

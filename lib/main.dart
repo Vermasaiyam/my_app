@@ -8,7 +8,13 @@ import 'package:my_app/widgets/rounded_button.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(create: (context) => ListMapProvider()),
+      ChangeNotifierProvider(create: (context) => CounterProvider()),
+    ],
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -37,13 +43,7 @@ class MyApp extends StatelessWidget {
 
       // list map
 
-      home: MultiProvider(
-        providers: [
-          ChangeNotifierProvider(create: (context) => ListMapProvider()),
-          ChangeNotifierProvider(create: (context) => CounterProvider()),
-        ],
-        child: ListPage(),
-      )
+      home: ListPage(),
     );
   }
 }

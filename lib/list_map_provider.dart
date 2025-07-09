@@ -9,5 +9,15 @@ class ListMapProvider extends ChangeNotifier{
     notifyListeners();
   }
 
+  void updateData(Map<String, dynamic> updatedData, int index){
+    _mData[index] = updatedData;
+    notifyListeners();
+  }
+
+  void deleteData(int index){
+    _mData.removeAt(index);
+    notifyListeners();
+  }
+
   List<Map<String, dynamic>> getData() => _mData;
 }
